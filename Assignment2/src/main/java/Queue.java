@@ -4,7 +4,7 @@ public class Queue {
 
     public void enqueue(String element){}
 
-    public void dequeue() throws StackUnderFlowException {}
+    public void dequeue() throws UnderFlowException{}
 
     public String peek(){return "";}
 
