@@ -17,7 +17,7 @@ public class QueueTest {
     }
 
     @Test
-    public void  Dequeue_MultipleElement_ReturnOne() throws UnderFlowException {
+    public void  Dequeue_MultipleElement_ReturnOne() throws StackUnderFlowException {
         Queue queue = new Queue();
         queue.enqueue("a");
         queue.enqueue("b");
@@ -26,13 +26,13 @@ public class QueueTest {
     }
 
     @Test
-    public void Dequeue_EmptyQueue_ThrowUnderFlowException() throws UnderFlowException {
+    public void Dequeue_EmptyQueue_ThrowUnderFlowException() throws StackUnderFlowException {
         try {
             Queue queue = new Queue();
             queue.dequeue();
             fail("UnderFlowException was not thrown.");
         }
-        catch(UnderFlowException e){
+        catch(StackUnderFlowException e){
             String message = "You cannot dequeue from an empty queue.";
             assertEquals(message,e.getMessage());
         }
